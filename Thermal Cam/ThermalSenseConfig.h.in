@@ -1,0 +1,3 @@
+// the configured options and settings for Tutorial
+#define ThermalSense_VERSION_MAJOR @ThermalSense_VERSION_MAJOR@
+#define ThermalSense_VERSION_MINOR @ThermalSense_VERSION_MINOR@
