@@ -17,7 +17,7 @@
  ***************************************************************************/
 
 
-#include <Adafruit_AMG88xx.h>
+#include <Adafruit_AMG88xx_Jetson.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
