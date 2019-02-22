@@ -8,7 +8,7 @@
 #include <errno.h>
 #include <sys/ioctl.h>
 
-#define BUFFER_SIZE 128
+#define BUFFER_SIZE 1024
 
 // Adapted from Canonical Arduino read by Chris Heydrick - 
 // https://github.com/cheydrick/Canonical-Arduino-Read/blob/master/canonicalarduinoread.c
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
   printf("fd opened as %i\n", fd);
   
   /* wait for the Arduino to reboot */
-  usleep(3500000);
+  usleep(7000000);
   
   /* get current serial port settings */
   tcgetattr(fd, &toptions);
@@ -41,10 +41,13 @@ int main(int argc, char *argv[])
   toptions.c_lflag |= ICANON;
   /* commit the serial port settings */
   tcsetattr(fd, TCSANOW, &toptions);
-
+	while(){
   /* Receive string from Arduino */
-  n = read(fd, buf, BUFFER_SIZE;
+	n = read(fd, buf, BUFFER_SIZE;
   /* insert terminating zero in the string */
-  buf[n] = 0;
+	buf[n] = 0;
 
-  printf("%i bytes read, buffer contains: %s\n", n, buf);
+	printf("%i bytes read, buffer contains: %s\n", n, buf);
+  
+	}
+}
