@@ -48,6 +48,6 @@ int main(int argc, char *argv[])
 	buf[n] = 0;
 
 	printf("%i bytes read, buffer contains: %s\n", n, buf);
-  
+	usleep(100000)
 	}
 }
