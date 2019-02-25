@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
   printf("fd opened as %i\n", fd);
   
   /* wait for the Arduino to reboot */
-  usleep(7000000);
+  usleep(3500000);
   
   /* get current serial port settings */
   tcgetattr(fd, &toptions);
@@ -42,12 +42,13 @@ int main(int argc, char *argv[])
   /* commit the serial port settings */
   tcsetattr(fd, TCSANOW, &toptions);
 	while(){
+	write(fd, "0", 1);
   /* Receive string from Arduino */
-	n = read(fd, buf, BUFFER_SIZE;
+	n = read(fd, buf, BUFFER_SIZE);
   /* insert terminating zero in the string */
 	buf[n] = 0;
 
 	printf("%i bytes read, buffer contains: %s\n", n, buf);
-	usleep(100000)
+	usleep(100000);
 	}
 }
