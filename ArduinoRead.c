@@ -42,10 +42,13 @@ int main(int argc, char *argv[])
   /* commit the serial port settings */
   tcsetattr(fd, TCSANOW, &toptions);
 	while(){
-	write(fd, "0", 1);
-	tcdrain(fd);
-  /* Receive string from Arduino */
+	bool ready = 0
 	n = read(fd, buf, BUFFER_SIZE);
+	if (n == 239) {
+	write(fd, "1", 1);
+	}
+  /* Receive string from Arduino */
+	// n = read(fd, buf, BUFFER_SIZE);
   /* insert terminating zero in the string */
 	buf[n] = 0;
 
