@@ -172,7 +172,7 @@ int read_test(int fd, bool therm_read){
 	
 	if (n < 35) return 0;
 	
-	else if ((n == 35) && (thermRead == 0)) {
+	else if ((n == 35) && (therm_read == 0)) {
 		if (buf[0] == '1') {
 			if (DEBUG) printf("%i bytes read, buffer contains: %s\n", n, buf);	
 			return 1;
@@ -180,7 +180,7 @@ int read_test(int fd, bool therm_read){
 		else return 4;
 	}
 	
-	else if ((n > 35) && (thermRead == 1)) {
+	else if ((n > 35) && (therm_read == 1)) {
 		if (buf[0] == '2') {
 			if (DEBUG) printf("%i bytes read, buffer contains: %s\n", n, buf);	
 			return 2;
