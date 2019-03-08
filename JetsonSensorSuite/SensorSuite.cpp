@@ -104,7 +104,7 @@ bool read_data(int fd, bool therm_read){
 	//if (DEBUG) printf("%i bytes read, buffer contains: %s\n", n, buf);
 	if (n < 35)
 	return 0;
-	else if (((n == 35) && (thermRead == 0)) || ((n > 35) && (thermRead == 1)))
+	else if (((n == 35) && (therm_read == 0)) || ((n > 35) && (therm_read == 1)))
 	{
 	if (DEBUG) printf("%i bytes read, buffer contains: %s\n", n, buf);	
 	return 1;
